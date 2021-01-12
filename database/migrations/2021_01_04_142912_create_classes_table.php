@@ -17,7 +17,7 @@ class CreateClassesTable extends Migration
             $table->bigIncrements('id')->unique();
             $table->string('name', 20);
             $table->string('avatar', 200)->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('status')->default(STATUS_CLASS["ACTIVE"]);
             $table->foreignId('userId')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('subjectId')->constrained('subjects')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

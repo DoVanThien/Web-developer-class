@@ -18,7 +18,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name',20)->unique();
             $table->string('description', 300)->nullable();
             $table->string('avatar', 200)->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('status')->default(STATUS_SUBJECT["ACTIVE"]);
             $table->foreignId('userId')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

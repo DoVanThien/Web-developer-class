@@ -24,7 +24,7 @@ class CreateCourseRqsTable extends Migration
             $table->string('mission', 500)->nullable();
             $table->foreignId('userId')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('classId')->constrained('classes')->onUpdate('cascade')->onDelete('cascade');
-            $table->tinyInteger('status')->default(3);
+            $table->tinyInteger('status')->default(STATUS_COURSE_REQUEST["PENDING"]);
             $table->timestamps();
         });
     }
